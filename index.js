@@ -1,11 +1,18 @@
- for(var i=0;i<document.querySelectorAll(".drum").length;i++){
+ for(var i=0;i<document.querySelectorAll(".drum").length;i++){//onclicking the button on the screen
  document.querySelectorAll(".drum")[i].addEventListener("click",handle);
  function handle(){
    /*var audio=new Audio("sounds/crash.mp3");
    audio.play();*/
    var buttoninner=this.innerHTML;
-   switch(buttoninner){
-    case "w":
+   makesound(buttoninner);
+
+   }}
+   document.addEventListener("keypress",function(event){
+     makesound(event.key);
+   })
+function makesound(key){//for pressing keys in keyboard;
+     switch(key){
+     case "w":
         var audio=new Audio('sounds/crash.mp3');
    audio.play();
    case "a":
@@ -38,4 +45,5 @@
    
 
    }
-}}
+}
+
